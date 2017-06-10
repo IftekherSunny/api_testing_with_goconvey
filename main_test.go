@@ -25,11 +25,11 @@ func TestUsersApiRoutes(t *testing.T) {
 
 			r.ServeHTTP(resp, req)
 
-			Convey("Then the response should be 200 with message 'User has been created'", func() {
+			Convey("Then the response should be 201 with message 'User has been created'", func() {
 				data := map[string]string{}
 				json.Unmarshal(resp.Body.Bytes(), &data)
 
-				So(resp.Code, ShouldEqual, 200)
+				So(resp.Code, ShouldEqual, 201)
 				So(data["message"], ShouldEqual, "User has been created")
 			})
 		})

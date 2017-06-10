@@ -17,7 +17,7 @@ func (self *UsersController) Create(c *gin.Context) {
 	name := c.PostForm("name")
 	age, _ := strconv.Atoi(c.PostForm("age"))
 
-	c.JSON(200, gin.H{
+	c.JSON(201, gin.H{
 		"message": self.User.Create(name, age),
 	})
 }
