@@ -7,13 +7,13 @@ import (
 	"github.com/iftekhersunny/api_testing_with_goconvey/models"
 )
 
-// User controller struct
-type UserController struct {
+// Users controller struct
+type UsersController struct {
 	User models.User
 }
 
 // Create a new user
-func (self *UserController) Create(c *gin.Context) {
+func (self *UsersController) Create(c *gin.Context) {
 	name := c.PostForm("name")
 	age, _ := strconv.Atoi(c.PostForm("age"))
 
@@ -23,7 +23,7 @@ func (self *UserController) Create(c *gin.Context) {
 }
 
 // Get all users
-func (self *UserController) Index(c *gin.Context) {
+func (self *UsersController) Index(c *gin.Context) {
 	c.JSON(200, gin.H{
 		"data": self.User.All(),
 	})

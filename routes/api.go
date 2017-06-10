@@ -9,22 +9,22 @@ import (
 const v1 = "/v1"
 
 // Controller instance
-var userController = new(controllers.UserController)
+var usersController = new(controllers.UsersController)
 
 var ApiRoutes = router.Routes{
 
-	// user controller routes...
+	// users controller routes...
 	router.Route{
 		Path:    "/users",
 		Method:  "GET",
-		Handler: userController.Index,
+		Handler: usersController.Index,
 		Version: v1,
 	},
 
 	router.Route{
 		Path:    "/users",
 		Method:  "POST",
-		Handler: userController.Create,
+		Handler: usersController.Create,
 		Version: v1,
 	},
 }
